@@ -3,24 +3,32 @@ import SearchBar from "./components/SearchBar"
 import SearchResults from "./components/SearchResults";
 import Playlist from "./components/Playlist";
 
+const results = [
+  {
+    title: "Dress",
+    artist: "taylor",
+    album: "Reputation"
+  },
+  {
+    title: "Wildest Dream",
+    artist: "Tay",
+    album: "1989"
+  }
+];
+
 function App() {
 
   const [search, setSearch] = useState('');
   const [playlist, setPlaylist] = useState([]);
 
-
-  const results = [
-    {
-      title: "Dress",
-      artist: "taylor",
-      album: "Reputation"
-    },
-    {
-      title: "Wildest Dream",
-      artist: "Tay",
-      album: "1989"
+  const [searchResults, setSearchResults] = useState([]);
+    
+  const searchResultHandler = (e) => {
+      e.preventDefault();
+      setSearchResults(results);
     }
-  ];
+
+
 
   {/*const { songs, setSongs } = useState([]);
   const { loading, setLoading } = useState(true);
@@ -55,8 +63,8 @@ console.log(loading)*/}
 
   return (
       <main>
-        <SearchBar search={search} setSearch={setSearch} />
-        <SearchResults data={results} />
+        <SearchBar search={search} setSearch={setSearch} searchResultHandler={searchResultHandler} />
+        <SearchResults searchResults={searchResults} />
         <Playlist />
       </main>
   )
