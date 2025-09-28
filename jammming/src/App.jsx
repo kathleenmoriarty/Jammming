@@ -59,13 +59,11 @@ function App() {
   console.log(songs)
 console.log(loading)*/}
 
-
-
   return (
       <main>
         <SearchBar search={search} setSearch={setSearch} searchResultHandler={searchResultHandler} />
-        <SearchResults searchResults={searchResults} />
-        <Playlist />
+        <SearchResults searchResults={searchResults} setPlaylist={setPlaylist} />
+        <Playlist  playlist={playlist} />
       </main>
   )
 }
