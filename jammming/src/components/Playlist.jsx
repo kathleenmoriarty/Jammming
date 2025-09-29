@@ -1,14 +1,20 @@
-import React from "react";
-import Track from "./Track";
+import React, { useState } from "react";
+import Tracklist from "./Tracklist";
 
-const Playlist = ({playlist}) => {
+const Playlist = ({playlist, removeTrack }) => {
+
+    const [playlistTitle, setPlaylistTitle] = useState("");
+
     return (
         <div className="playlist">
-            {
-                playlist.map((song, index) => (
-                    <Track song={song} key={index} />
-                ))
-            }
+            <input type="text" onChange={(e) => setPlaylistTitle(e.target.value)} placeholder="Untitled"/>
+            <h3>{playlistTitle}</h3>
+                <Tracklist 
+                    songs={playlist} 
+                    addedToPlaylist={true} 
+                    removeTrack={removeTrack}
+                    playlist={playlist}
+                />
             <button>Save to Spotify</button>
         </div>
     )

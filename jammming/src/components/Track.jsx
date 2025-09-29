@@ -1,6 +1,13 @@
 import React from "react";
 
-const Track = ({song, setPlaylist}) => {
+const Track = ({song, addedToPlaylist, removeTrack, addTrack }) => {
+
+    const renderButton = () => {
+        if (addedToPlaylist) {
+            return <button onClick={() => removeTrack(song)}>- Remove</button>
+        } 
+        return <button onClick={() => addTrack(song)}>+ Add</button>
+    }
 
     return (
         <div className="track">
@@ -8,8 +15,8 @@ const Track = ({song, setPlaylist}) => {
                 <h3>{song.title}</h3>
                 <p>by {song.artist} | {song.album}</p>
             </div>
-            <div className="add-song">
-                <button onClick={() => setPlaylist((oldList) => [...oldList, song])}>+</button>
+            <div className="add-remove-song">
+                {renderButton()}
             </div>
             
         </div>
