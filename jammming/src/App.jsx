@@ -9,13 +9,15 @@ const results = [
     id: 1,
     name: "Dress",
     artist: "taylor",
-    album: "Reputation"
+    album: "Reputation",
+    uri: "blah1"
   },
   {
     id: 2,
     name: "Wildest Dream",
     artist: "Tay",
-    album: "1989"
+    album: "1989",
+    uri: "blah2"
   }
 ];
 
@@ -24,6 +26,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [playlist, setPlaylist] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [trackUris, setTrackUris] = useState([]);
     
   const searchResultHandler = (e) => {
       e.preventDefault();
@@ -33,13 +36,17 @@ function App() {
   const removeTrack = (song) => {
       const updatedPlaylist = playlist.filter((track) => track.id !== song.id);
       setPlaylist(updatedPlaylist);
-      setSearchResults((oldResults) => [...oldResults, song])
+      setSearchResults((oldResults) => [...oldResults, song]);
+      setTrackUris((oldList) => oldList.filter((uri) => uri !== song.uri));
+      
   }
 
   const addTrack = (song) => {
       setPlaylist((oldList) => [...oldList, song]);
       setSearchResults((oldResults) => oldResults.filter((track) => track.id !== song.id));
+      setTrackUris((oldList) => [...oldList, song.uri]);
   }
+
 
   return (
       <main>
@@ -47,7 +54,7 @@ function App() {
         <SearchBar search={search} setSearch={setSearch} searchResultHandler={searchResultHandler} />
         <div className="list-section">
           <SearchResults searchResults={searchResults} addTrack={addTrack} playlist={playlist} />
-          <Playlist  playlist={playlist} removeTrack={removeTrack}  />
+          <Playlist  playlist={playlist} removeTrack={removeTrack} />
         </div>
 
       </main>

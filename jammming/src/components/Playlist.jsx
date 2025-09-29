@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tracklist from "./Tracklist";
+import "../styles/Playlist.css";
 
 const Playlist = ({playlist, removeTrack }) => {
 
@@ -8,7 +9,7 @@ const Playlist = ({playlist, removeTrack }) => {
     return (
         <div className="playlist">
             <input type="text" onChange={(e) => setPlaylistTitle(e.target.value)} placeholder="Untitled"/>
-            <h3>{playlistTitle}</h3>
+            <h2>{playlistTitle}</h2>
                 <Tracklist 
                     songs={playlist} 
                     addedToPlaylist={true} 
