@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Track.css";
 
 const Track = ({song, addedToPlaylist, removeTrack, addTrack }) => {
 

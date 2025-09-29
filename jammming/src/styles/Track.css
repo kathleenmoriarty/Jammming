@@ -1,0 +1,24 @@
+.track {
+    background-color: rgba(85, 123, 194, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px;
+    margin: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.song-info h3 {
+    font-size: 18px;
+}
+
+.add-remove-song button {
+    border: none;
+    padding: 8px;
+    border-radius: 30px;
+    font-size: 14px;
+    background-color: rgba(85, 123, 194);
+    color: #fff;
+}
