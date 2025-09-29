@@ -12,7 +12,7 @@ const Track = ({song, addedToPlaylist, removeTrack, addTrack }) => {
     return (
         <div className="track">
             <div className="song-info">
-                <h3>{song.title}</h3>
+                <h3>{song.name}</h3>
                 <p>by {song.artist} | {song.album}</p>
             </div>
             <div className="add-remove-song">

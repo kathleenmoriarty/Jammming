@@ -1,0 +1,46 @@
+.searchbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+}
+
+.searchbar label {
+    font-size: 28px;
+    margin: 20px;
+}
+
+.searchbar input {
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+    border: lightgray;
+}
+
+.searchbar input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.searchbar button {
+    border: none;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: rgba(85, 123, 194);
+    color: #fff;
+}
+
+.searchbar button:hover {
+    cursor: pointer;
+    padding: 12px;
+    font-size: 17px;
+}
+
+.searchbar button:active {
+    padding: 10px;
+    font-size: 16px;
+}

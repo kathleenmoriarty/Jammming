@@ -7,13 +7,13 @@ import Spotify from "./assets/Spotify";
 const results = [
   {
     id: 1,
-    title: "Dress",
+    name: "Dress",
     artist: "taylor",
     album: "Reputation"
   },
   {
     id: 2,
-    title: "Wildest Dream",
+    name: "Wildest Dream",
     artist: "Tay",
     album: "1989"
   }
@@ -30,7 +30,6 @@ function App() {
       setSearchResults(results);
     }
 
-
   const removeTrack = (song) => {
       const updatedPlaylist = playlist.filter((track) => track.id !== song.id);
       setPlaylist(updatedPlaylist);
@@ -42,7 +41,20 @@ function App() {
       setSearchResults((oldResults) => oldResults.filter((track) => track.id !== song.id));
   }
 
+  return (
+      <main>
+        <header>Jammming</header>
+        <SearchBar search={search} setSearch={setSearch} searchResultHandler={searchResultHandler} />
+        <div className="list-section">
+          <SearchResults searchResults={searchResults} addTrack={addTrack} playlist={playlist} />
+          <Playlist  playlist={playlist} removeTrack={removeTrack}  />
+        </div>
 
+      </main>
+  )
+}
+
+export default App
 
   {/*const { songs, setSongs } = useState([]);
   const { loading, setLoading } = useState(true);
@@ -72,14 +84,3 @@ function App() {
 
   console.log(songs)
 console.log(loading)*/}
-
-  return (
-      <main>
-        <SearchBar search={search} setSearch={setSearch} searchResultHandler={searchResultHandler} />
-        <SearchResults searchResults={searchResults} addTrack={addTrack} playlist={playlist} />
-        <Playlist  playlist={playlist} removeTrack={removeTrack}  />
-      </main>
-  )
-}
-
-export default App
