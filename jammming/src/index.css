@@ -8,7 +8,7 @@ main {
   background-image: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7);
   color: #fff;
   width: 100%;
-  height: auto;
+  min-height: 700px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -17,5 +17,36 @@ header {
   text-align: center;
   font-size: 42px;
   padding: 10px;
-  color: rgb(50, 72, 113);
+  color: #f8c6ba;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: rgba(85, 123, 194);
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+  padding: 12px;
+}
+
+button:active {
+  padding: 10px;
+}
+
+
+.list-section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: top;
+  background-color: rgba(254, 180, 123, 0.5);
+  width: 84%;
+  margin: 10px auto;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }

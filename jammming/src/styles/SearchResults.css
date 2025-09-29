@@ -1,0 +1,11 @@
+.search-results {
+    display: flex;
+    align-items: top;
+    flex-flow: column nowrap;
+    width: 40%;
+}
+
+.search-results h2 {
+    color: rgb(50, 72, 113);
+    font-size: 20px;
+}

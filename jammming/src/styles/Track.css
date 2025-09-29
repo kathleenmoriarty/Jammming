@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     padding: 12px;
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     color: #fff;
     border-radius: 5px;
 }
@@ -15,10 +15,6 @@
 }
 
 .add-remove-song button {
-    border: none;
     padding: 8px;
-    border-radius: 30px;
     font-size: 14px;
-    background-color: rgba(85, 123, 194);
-    color: #fff;
 }

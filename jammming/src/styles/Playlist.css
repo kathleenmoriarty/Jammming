@@ -1,0 +1,24 @@
+.playlist {
+    display: flex;
+    align-items: top;
+    flex-flow: column nowrap;
+    width: 40%;
+    text-align: left;
+}
+
+.playlist input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: rgb(50, 72, 113);
+    font-weight: bold;
+}
+
+.playlist button {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 550;
+}
