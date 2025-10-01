@@ -1,21 +1,20 @@
 import React from "react";
-import "../styles/SearchBar.css"
-
+import "../styles/SearchBar.css";
 
 const SearchBar = ({ search, setSearch, searchResultHandler }) => {
+  return (
+    <form className="searchbar" onSubmit={searchResultHandler}>
+      <label htmlFor="search">Search for your favorite song, artist, or album!</label>
+      <input
+        id="search"
+        type="text"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Enter search term"
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
+};
 
-    return (
-        <div className="searchbar">
-            <label htmlFor="search">Search for your favorite song, artist, or album!</label>
-            <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Enter search term"
-            />
-            <button type="submit" onClick={searchResultHandler}>Search</button>
-        </div>
-    )
-}
-
-export default SearchBar
+export default SearchBar;
