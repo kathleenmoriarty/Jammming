@@ -78,15 +78,16 @@ Make sure your Spotify Developer Dashboard is set up correctly:
 ```bash
 git clone https://github.com/yourusername/jammming.git
 cd jammming
+'''
 
-## 2. Install dependencies
+### 2. Install dependencies
 
 ```bash
-npm install
+npm install```
 
-## 3. Run the app
+### 3. Run the app
 
-npm start
+```npm start```
 
 ## ✅ Usage
 
@@ -100,7 +101,7 @@ npm start
 
 ## ⚠️ Notes
 
-- Spotify's token expires after a short duration — PKCE flow should handle silent re-authentication if implemented fully.
+- Spotifys token expires after a short duration — PKCE flow should handle silent re-authentication if implemented fully.
 - You must be logged into a valid Spotify account to create playlists.
 - Playlists are saved as **private** by default.
 
