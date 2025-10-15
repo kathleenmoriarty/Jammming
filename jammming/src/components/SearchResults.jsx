@@ -7,8 +7,7 @@ const SearchResults = ({ searchResults, addTrack, playlist }) => {
         <div className="search-results" >
         <h2>Search Results:</h2>
             <Tracklist 
-                songs={searchResults} 
-                addedToPlaylist={true} 
+                songs={searchResults}  
                 addTrack={addTrack}
                 playlist={playlist}
             />

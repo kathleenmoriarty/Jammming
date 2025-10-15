@@ -29,6 +29,8 @@ function App() {
   const [trackUris, setTrackUris] = useState([]);
   const [playlistTitle, setPlaylistTitle] = useState("");
   const [token, setToken] = useState(null);
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     async function fetchToken() {
@@ -118,25 +120,28 @@ function App() {
 
   const savePlaylist = async () => {
     if (!playlistTitle) {
-      alert('Please enter a playlist title');
+      setErrorMessage('Please enter a playlist title');
       return;
     }
     if (!trackUris.length) {
-      alert('Add at least one track to the playlist');
+      setErrorMessage('Add at least one track to the playlist');
       return;
     }
     try {
+      setErrorMessage('');
+
       const userId = await getUserId(token);
       const playlistId = await createPlaylist(userId, playlistTitle, token);
       await addTracksToPlaylist(playlistId, trackUris, token);
-      alert(`Playlist "${playlistTitle}" saved successfully!`);
+      setMessage(`Playlist "${playlistTitle}" saved successfully!`);
+      setTimeout(() => setMessage(''), 3000);
       // Optionally, reset states here
       setPlaylist([]);
       setTrackUris([]);
       setPlaylistTitle('');
     } catch (error) {
       console.error('Error saving playlist:', error);
-      alert('Failed to save playlist. Please try again.');
+      setErrorMessage('Failed to save playlist. Please try again.');
     }
   };
   
@@ -158,6 +163,8 @@ function App() {
         <div className="list-section">
           <SearchResults searchResults={searchResults} addTrack={addTrack} playlist={playlist} />
           <Playlist  playlist={playlist} savePlaylist={savePlaylist} removeTrack={removeTrack} setPlaylistTitle={setPlaylistTitle} />
+          {message && <div className="confirmation">{message}</div>}
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
 
       </main>
