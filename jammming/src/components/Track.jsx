@@ -15,11 +15,9 @@ const Track = ({song, addedToPlaylist, removeTrack, addTrack }) => {
             <div className="song-info">
                 <h3>{song.name}</h3>
                 <p>
-                <p>
                     by {song.artists.map(artist => artist.name).join(', ')} | {" "} {song.album.name}
                 </p>
-
-                </p>
+            
             </div>
             <div className="add-remove-song">
                 {renderButton()}
