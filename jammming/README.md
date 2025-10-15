@@ -78,16 +78,20 @@ Make sure your Spotify Developer Dashboard is set up correctly:
 ```bash
 git clone https://github.com/yourusername/jammming.git
 cd jammming
-'''
+```
 
 ### 2. Install dependencies
 
-```bash
-npm install```
+```
+bash
+npm install
+```
 
 ### 3. Run the app
 
-```npm start```
+```
+npm start
+```
 
 ## ✅ Usage
 
